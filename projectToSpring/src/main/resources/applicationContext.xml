@@ -9,28 +9,29 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean1"
-          class="com.Tial.JazzMusic">
-    </bean>
-    <bean id="musicBean2"
-          class="com.Tial.RockMusic">
-    </bean>
-    <bean id="musicBean3"
-          class="com.Tial.ClassicalMusic">
+    <bean id="musicBean"
+          class="com.Tial.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer"
-        class="com.Tial.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean3"/>
-            </list>
-        </property>
 
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicBean2"-->
+<!--          class="com.Tial.RockMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBean3"-->
+<!--          class="com.Tial.ClassicalMusic">-->
+<!--    </bean>-->
+
+<!--    <bean id="musicPlayer"-->
+<!--        class="com.Tial.MusicPlayer"-->
+<!--          scope="prototype">-->
+<!--        <property name="music" ref="musicBean"/>-->
+
+
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 </beans>

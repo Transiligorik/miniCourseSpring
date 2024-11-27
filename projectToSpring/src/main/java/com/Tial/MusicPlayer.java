@@ -1,5 +1,4 @@
 package com.Tial;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +40,13 @@ public class MusicPlayer {
         this.musicList = musicList;
     }
 
+//    public void playMusic() {
+//        for(Music music1: musicList) {
+//            System.out.println("Playing:  " + music1.getSong());
+//        }
+//    }
+
     public void playMusic() {
-        for(Music music1: musicList) {
-            System.out.println("Playing:  " + music1.getSong());
-        }
+        System.out.println("Playing: " + music.getSong());
     }
 }
